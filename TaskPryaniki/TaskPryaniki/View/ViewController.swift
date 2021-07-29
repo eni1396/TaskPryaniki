@@ -26,15 +26,16 @@ class ViewController: UIViewController {
         table.dataSource = self
         viewModel.getData {
             self.table.reloadData()
+        } errorBlock: {
+            self.showAlert(message: "Произошла ошибка")
         }
+
         
         view.addSubview(table)
         table.snp.makeConstraints { maker in
             maker.leading.trailing.top.bottom.equalToSuperview()
         }
     }
-    
-    
 }
 
 
@@ -84,7 +85,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: CellDelegate {
     
-    func showButtonAlert(sender: ButtonsCell, with message: String) {
+    func showAlert(sender: ButtonsCell, with message: String) {
         let vc = UIAlertController(title: "Выбран блок с кнопками", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         vc.addAction(action)

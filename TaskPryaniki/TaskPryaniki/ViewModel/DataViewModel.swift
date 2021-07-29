@@ -7,11 +7,7 @@
 
 import Foundation
 
-protocol ViewModelProtocol {
-    
-}
-
-final class DataViewModel: ViewModelProtocol {
+final class DataViewModel {
     
     private let apiManager = ApiManager()
     private var model: DataModel?
@@ -42,12 +38,12 @@ final class DataViewModel: ViewModelProtocol {
         model?.view.count ?? 0
     }
     
-    func getData(completion: @escaping () -> Void) {
+    func getData(completion: @escaping () -> Void, errorBlock: @escaping () -> Void) {
         apiManager.fetch { (model: DataModel) in
             self.model = model
             completion()
         } errorHandler: { _ in
-            //alert with error
+            errorBlock()
         }
 
     }

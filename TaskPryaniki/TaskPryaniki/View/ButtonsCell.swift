@@ -8,7 +8,7 @@
 import SnapKit
 
 protocol CellDelegate: AnyObject {
-    func showButtonAlert(sender: ButtonsCell, with message: String)
+    func showAlert(sender: ButtonsCell, with message: String)
 }
 
 class ButtonsCell: UITableViewCell {
@@ -52,13 +52,13 @@ class ButtonsCell: UITableViewCell {
     }
     
     @objc private func button1Pressed(_ sender: UIButton) {
-        self.delegate?.showButtonAlert(sender: self, with: "Нажата кнопка 1")
+        self.delegate?.showAlert(sender: self, with: "Нажата кнопка 1")
     }
     @objc private func button2Pressed(_ sender: UIButton) {
-        self.delegate?.showButtonAlert(sender: self, with: "Нажата кнопка 2")
+        self.delegate?.showAlert(sender: self, with: "Нажата кнопка 2")
     }
     @objc private func button3Pressed(_ sender: UIButton) {
-        self.delegate?.showButtonAlert(sender: self, with: "Нажата кнопка 3")
+        self.delegate?.showAlert(sender: self, with: "Нажата кнопка 3")
     }
 }
 
