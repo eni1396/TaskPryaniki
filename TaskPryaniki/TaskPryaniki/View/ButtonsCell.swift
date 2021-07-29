@@ -44,21 +44,21 @@ class ButtonsCell: UITableViewCell {
             maker.leading.top.trailing.equalToSuperview().inset(20)
         }
     }
-    
+    //названия кнопок
     func handleButtonTap(variant: [String]) {
         button1.setTitle(variant[0], for: .normal)
         button2.setTitle(variant[1], for: .normal)
         button3.setTitle(variant[2], for: .normal)
     }
-    
+    // действия по нажатию на кнопку
     @objc private func button1Pressed(_ sender: UIButton) {
-        self.delegate?.showAlert(sender: self, with: "Нажата кнопка 1")
+        self.delegate?.showAlert(sender: self, with: AlertConstants.button1Text)
     }
     @objc private func button2Pressed(_ sender: UIButton) {
-        self.delegate?.showAlert(sender: self, with: "Нажата кнопка 2")
+        self.delegate?.showAlert(sender: self, with: AlertConstants.button2Text)
     }
     @objc private func button3Pressed(_ sender: UIButton) {
-        self.delegate?.showAlert(sender: self, with: "Нажата кнопка 3")
+        self.delegate?.showAlert(sender: self, with: AlertConstants.button3Text)
     }
 }
 

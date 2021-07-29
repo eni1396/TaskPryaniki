@@ -9,18 +9,9 @@ import UIKit
 
 class PictureCell: UITableViewCell {
 
-    let newImageView: UIImageView = {
-        let view = UIImageView()
-        return view
-    }()
-    
-    let newTextLabel: UILabel = {
-        let lbl = UILabel()
-        return lbl
-    }()
+    let newImageView = UIImageView()
+    let newTextLabel = UILabel()
 
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Вью модель для обработки данных из сети
 final class DataViewModel {
     
     private let apiManager = ApiManager()
